@@ -4,7 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';4
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
@@ -32,6 +34,7 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { FileUploadModule } from 'ng2-file-upload';
+import { TimeagoModule } from 'ngx-timeago';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -63,8 +66,11 @@ export class CustomHammerConfig extends HammerGestureConfig {
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      PaginationModule.forRoot(),
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
+      ButtonsModule.forRoot(),
+      TimeagoModule.forRoot(),
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
