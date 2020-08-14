@@ -13,7 +13,9 @@ import { appRoutes } from './routes';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { MessagesResolver } from './_resolvers/messages.resolver';
 import { NgxGalleryModule } from 'ngx-gallery-9';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 import { AuthService } from './_services/auth.service';
 import { AppComponent } from './app.component';
@@ -61,7 +63,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserModule,
@@ -95,6 +98,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberDetailResolver,
       MemberListResolver,
       ListsResolver,
+      MessagesResolver,
       MemberEditResolver,
       PreventUnsavedChanges,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
